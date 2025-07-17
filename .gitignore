@@ -43,3 +43,4 @@ build/
 
 # Test data directory
 test_data/
+.vercel

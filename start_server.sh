@@ -34,4 +34,4 @@ fi
 
 # Start the server
 echo "Starting the server..."
-python server.py
+python app.py
