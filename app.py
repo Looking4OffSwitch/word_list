@@ -144,7 +144,7 @@ def get_random_word(words):
     random_word_key = random.choice(word_keys)
     return words[random_word_key]
 
-@app.route("/random-word", methods=['GET'])
+@app.route("/", methods=['GET'])
 def random_word():
     """
     API endpoint that returns a random vocabulary word.
@@ -170,54 +170,6 @@ def random_word():
     # Create the response object
     response_obj = {"word": word_data}
     return jsonify(response_obj)
-
-@app.route("/", methods=['GET'])
-def root():
-    """
-    Root endpoint that provides basic API information.
-    
-    Returns:
-        Flask response: JSON response with API information
-    """
-    response_obj = {
-        "message": "Welcome to the Word List API",
-        "endpoints": {
-            "randomWord": "/random-word",
-            "health": "/health"
-        }
-    }
-    return jsonify(response_obj)
-
-
-@app.route("/health", methods=['GET'])
-def health_check():
-    """
-    Health check endpoint that confirms the server is running.
-    
-    Returns:
-        Flask response: JSON response with server status
-    """
-    try:
-        # Verify that the word list file can be read
-        validate_word_list_file()
-        status = "healthy"
-        
-        # Check if there's at least one word
-        try:
-            word_list_data = read_word_list_data()
-            word_count = len(word_list_data.get('words', {}))
-            message = f"Server is running with {word_count} words available"
-        except Exception:
-            message = "Server is running but unable to count words"
-    except Exception as e:
-        status = "unhealthy"
-        message = str(e)
-    
-    return jsonify({
-        "status": status,
-        "message": message,
-        "timestamp": str(random.randint(1, 1000))  # Added to prevent caching
-    })
 
 if __name__ == "__main__":
     try:
