@@ -95,7 +95,7 @@ The server is configured using environment variables in the `.env` file:
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PORT` | The port number for the server | `3000` |
-| `WORD_LIST` | Path to the word list JSON file | `data.json` |
+| `WORD_LIST` | Path to the word list JSON file | `word_list.json` |
 | `FIXED_WORD_KEY` | (Optional) If set, always returns this specific word | - |
 
 ## Word List JSON Format

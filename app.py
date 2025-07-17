@@ -16,7 +16,7 @@ load_dotenv()
 
 app = Flask(__name__)
 PORT = int(os.environ.get("PORT", 3000))
-WORD_LIST = os.environ.get("WORD_LIST", "data.json")
+WORD_LIST = os.environ.get("WORD_LIST", "word_list.json")
 
 def find_word_list_file():
     """
