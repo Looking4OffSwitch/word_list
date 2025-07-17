@@ -2,7 +2,7 @@
 
 A Python implementation of a Word List API server that provides random vocabulary words for the trmnl plugin.
 
-NOTE: To deploy the server to vercel: https://www.youtube.com/watch?v=LaMVBDbUtMA
+NOTE: To deploy the server to vercel: https://www.youtube.com/watch?v=o17Fk4Dcn-w
 
 ## Requirements
 
