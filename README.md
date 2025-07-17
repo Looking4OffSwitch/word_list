@@ -72,8 +72,7 @@ python app.py
 ```
 
 The server will start on port 3000 by default. You can access the API at:
-- http://localhost:3000/ - Basic info
-- http://localhost:3000/random-word - Get a random vocabulary word
+- http://localhost:3000/ - Get a random vocabulary word
 
 ## Configuration (.env file)
 
@@ -143,34 +142,6 @@ The server validates the word list file at startup and will fail to start if:
 ## API Endpoints
 
 ### `GET /`
-
-Returns basic information about the API.
-
-Response:
-```json
-{
-  "message": "Welcome to the Word List API",
-  "endpoints": {
-    "randomWord": "/random-word",
-    "health": "/health"
-  }
-}
-```
-
-### `GET /health`
-
-Returns the health status of the server.
-
-Response:
-```json
-{
-  "status": "healthy",
-  "message": "Server is running with 229 words available",
-  "timestamp": "123456789"
-}
-```
-
-### `GET /random-word`
 
 Returns a random vocabulary word from the word list.
 
